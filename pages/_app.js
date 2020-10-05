@@ -1,7 +1,6 @@
-import '../styles/globals.css'
 
-function MyApp({ Component, pageProps }) {
+function WD({ Component, pageProps }) {
   return <Component {...pageProps} />
 }
 
-export default MyApp
+export default WD
