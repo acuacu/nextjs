@@ -1,5 +1,7 @@
 import HeadBody from '../components/Head'
 import Nav from '../components/Nav'
+import SimpleSlider from '../components/simpleSlider'
+import Slider from "react-slick";
 
 export default class extends React.Component {
   state = {
@@ -11,11 +13,14 @@ export default class extends React.Component {
 
         <HeadBody title="Desarrollamos su página web" />
         <Nav />
-        <main className="justify-content-center">
-          <div className="head col-12 col-sm-12 col-md-12 col-lg-12">
-            <h1 className="d-1">Implementación y desarrollo Web.</h1>
+
+        <div className="col-12">
+          <div className="x">
+            <SimpleSlider></SimpleSlider>
+
           </div>
-        </main>
+        </div>
+
         <div className="content-1 col-12 row justify-content-between">
           <div className="content-tarjeta col-12 col-sm-6 col-md-5 col-lg-5">
             <h4>Lorem ipsum</h4>
@@ -27,12 +32,18 @@ export default class extends React.Component {
             </p>
           </div>
 
-          <div className="content-tarjeta col-6 d-none d-sm-block"> 
-          <h4>Lorem ipsum</h4>
-          
+          <div className="content-tarjeta col-6 d-none d-sm-block">
+            <h4>Lorem ipsum</h4>
+
           </div>
         </div>
         <style jsx global >{`
+
+          .x{
+            float: left;
+            width: 100%;
+            height: 500px;
+          }
           .bienvenido{
             color: #DA7655;
             padding: 18px;
@@ -57,11 +68,12 @@ export default class extends React.Component {
             .body-content{
               margin-top: 50px;
               background-color: #cee6f2;
-              height: 100%;
               width: 100%;
               position: absolute;
             }
           `}</style>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.3/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
       </div>
     )
   }
