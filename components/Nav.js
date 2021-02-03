@@ -11,7 +11,7 @@ export default class NavBar extends React.Component {
     render() {
         return (
             <div>
-                <nav className="d-fluid">
+                <div className="d-fluid nav">
                     <div className="content">
                         <div className="margen col-12 col-sm-4 col-md-4 col-lg-3">
                             <Link href="/"  >
@@ -69,10 +69,10 @@ export default class NavBar extends React.Component {
                         <div className="button-activity d-none d-sm-block col-sm-3 col-lg-2">boton de actividad</div>
                         <Dropdown />
                     </div>
-                </nav>
+                </div>
 
                 <style jsx >{`
-                    nav{
+                    .nav{
                         position: fixed;
                         z-index: 20000;
                         top: 0px;
