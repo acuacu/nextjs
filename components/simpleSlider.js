@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import Slider from "react-slick";
 
 export default class SimpleSlider extends React.Component {
@@ -5,69 +6,78 @@ export default class SimpleSlider extends React.Component {
     const settings = {
       dots: true,
       infinite: true,
-      speed: 10,
+      speed: 100,
       slidesToShow: 1,
       slidesToScroll: 1
     };
     return (
-      <div>
+      <div className="posit col-12">
         <Slider {...settings}>
-          <div className="uno">
-          <main className="justify-content-center">
-          <div className="head col-12 col-sm-12 col-md-12 col-lg-12">
-            <h3 className="d-1">Implementación y desarrollo Web .</h3>
-            <p> 
-               Estamos trabajando para mejorar el desarrollo de software y su imlementacion.
-            </p>
+
+          <div className="uno mains1" >
+            <Link href="/"  >
+              <img src="http://localhost:3000/logo.png" className="LOGO" />
+            </Link>
+            <h1>Almost before we knew it, we had left the</h1>
+            <p className="d-none d-md-block">El Lorem Ipsum fue concebido como un texto de relleno. <br />formateado de una cierta manera para permitir la presentación de elementos gráficos en documentos, sin necesidad de una copia</p>
           </div>
-        </main>
+
+          <div className="dos mains1" >
+            <Link href="/"  >
+              <img src="http://localhost:3000/logo.png" className="LOGO" />
+            </Link>
+            <h1>Almost before we knew it, we had left the gro</h1>
+            <p className="d-none d-md-block">El Lorem Ipsum fue concebido como un texto de relleno. <br />formateado de una cierta manera para permitir la presentación de elementos gráficos en documentos, sin necesidad de una copia</p>
           </div>
-          <div className="dos">
-            <h3>2</h3>
-          </div>
-          <div className="tres">
-            <h3>3</h3>
-          </div>
-          <div className="cuatro">
-            <h3>4</h3>
-          </div>
-          <div className="cinco">
-            <h3>5</h3>
-          </div>
-          <div className="seis">
-            <h3>6</h3>
-          </div>
+
+
+
+
+
+
         </Slider>
-        <style jsx global >{`
+        <style jsx  >{`
+          .tres{
+            background-color: brown;
+            width: 100%;
+            height: 400px;
+          }
+          .LOGO{
+            margin: 0 auto;
+            margin-top: 15px;
+          }
+          .mains1{
+            padding-top: 60px;
+            background-size: 100% 100%;
+            font-family: 'Dosis', sans-serif;
+            align-content: center;
+          }
+          .mains1>h1{
+            width: 100%;
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom:30px;
+            float: left;
+            top: 550px;
+            color: #fff;
+          }
+          .mains1>p{
+            width: 100%;
+            text-align: center;
+            float: left;
+            top: 550px;
+            color: #fff;
+          }
           .uno{
               width: 100%;
-              height: 450px;
+              height: 400px;
               background-color: blueviolet;
           }
+
         .dos{
             background-color: brown;
             width: 100%;
-              height: 450px;
-        }
-        .tres{
-            background-color: brown;
-            width: 100%;
-              height: 450px;
-        }
-        .cuatro{
-            background-color: brown;
-            width: 100%;
-              height: 450px;
-        }
-        .cinco{
-            background-color: brown;
-            width: 100%;
-              height: 450px;
-        }
-        .seis{
-            background-color: brown;
-            width: 100%;
-              height: 450px;
+            height: 400px;
         }
           `}</style>
       </div>

@@ -1,10 +1,15 @@
 
-export default class Dropdown extends React.Component {
-    render() {
-        return (
-            <div className="drop_down d-none">
-                
-                <style jsx >{`
+export default function NavBar() {
+
+    return (
+        <div className="drop_down d-none">
+            <nav className="navbar navbar-light bg-light">
+                <a className="navbar-brand" href="#">
+                    <img src="http://localhost:3000/logo.png" width={56} height={31} className="d-inline-block align-top" alt="" />
+          Walter Daniel Acuña
+        </a>
+            </nav>
+            <style jsx >{`
                     .drop_down{
                         height: 100px;
                         width: 50%;
@@ -12,7 +17,6 @@ export default class Dropdown extends React.Component {
                         float: right;
                     }
                 `}</style>
-            </div>
-        )
-    }
+        </div>
+    )
 }

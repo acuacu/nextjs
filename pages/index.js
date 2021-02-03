@@ -1,10 +1,10 @@
 import HeadBody from '../components/Head'
-import Nav from '../components/Nav'
+import NavBar from '../components/nav'
 import SimpleSlider from '../components/simpleSlider'
 import Slider from "react-slick";
+import ActiveLink from "../components/button/link"
 import MultipleItem from "../components/simpleMultiple3Elemento"
 import MultipleItems from "../components/simpleMultipleElementos"
-
 export default class extends React.Component {
   state = {
     token: null
@@ -19,21 +19,11 @@ export default class extends React.Component {
           description="El portafolios ganador de un hoscar por simplesa y utilidad"
           keywords="Desarrollo pagina Web, Wordpress, Portafolios de Walter, Nextjs"
         />
+        <NavBar></NavBar>
+        {/* 1er slider*/}
 
-        <nav className="navbar navbar-light bg-light">
-          <a className="navbar-brand" href="#">
-            <img src="http://localhost:3000/logo.png" width={56} height={31} className="d-inline-block align-top" alt="" />
-          Walter Daniel Acuña
-        </a>
-        </nav>
-        {/* 1er slider <Nav />*/}
-
-
-        <div>
-          <div>
             <SimpleSlider></SimpleSlider>
-          </div>
-        </div>
+
         <br />
 
         {/* 1er banner Lg*/}
@@ -251,7 +241,7 @@ export default class extends React.Component {
               padding:0;
               }
             .body-content{
-              margin-top: 50px;
+              margin-top: 60px;
               background-color: aliceblue;
               width: 100%;
               position: absolute;

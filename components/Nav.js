@@ -1,11 +1,13 @@
 // IMPORT FROM NEXT
 import Link from 'next/link'
 import Head from 'next/head'
+import ActiveLink from './button/link'
+import ActiveLinkIcon from "./button/iconLink"
 
 import Dropdown from './nav/index'
 
 
-export default class Nav extends React.Component {
+export default class NavBar extends React.Component {
     render() {
         return (
             <div>
@@ -24,7 +26,7 @@ export default class Nav extends React.Component {
                         <div className="LinkTecnologias d-none d-lg-block col-lg-1 justify-content-center">
                             <Link href="/">
                                 <a>
-                                    WordPress <b/> <img className="col" src="https://upload.wikimedia.org/wikipedia/commons/9/98/WordPress_blue_logo.svg" width="30" height="30" alt="" loading="lazy" />
+                                    WordPress <b /> <img className="col" src="https://upload.wikimedia.org/wikipedia/commons/9/98/WordPress_blue_logo.svg" width="30" height="30" alt="" loading="lazy" />
                                 </a>
                             </Link>
                         </div>
@@ -47,33 +49,21 @@ export default class Nav extends React.Component {
                             <div className="bucsador">  BUSCAR  </div>
                         </div>
                         <div className="contenedor-botones">
-                            <div className="d-none d-sm-block">
-                                <Link href="/">
-                                    <a>
-                                        <p className="icon-annotate icon-nav"> Términos y condiciones </p>
-                                    </a>
-                                </Link>
+                            <div className="d-none d-sm-block icon-link">
+                            <ActiveLinkIcon href="/soporte" icon="icon-shop" >
+                                    Soporte
+                                </ActiveLinkIcon>
                             </div>
-                            <div className="d-none d-sm-block">
-                                <Link href="/">
-                                    <a>
-                                        <p className="icon-shop icon-nav"> Tienda </p>
-                                    </a>
-                                </Link>
+
+                            <div className="d-none d-sm-block icon-link">
+                                <ActiveLinkIcon href="/registro" icon="icon-shop" >
+                                    Registro
+                                </ActiveLinkIcon>
                             </div>
-                            <div className="d-none d-sm-block">
-                                <Link href="/">
-                                    <a>
-                                        <p className="icon-user-add icon-nav"> Registro </p>
-                                    </a>
-                                </Link>
-                            </div>
-                            <div className="d-none d-sm-block">
-                                <Link href="/ingreso">
-                                    <a>
-                                        <p className="icon-user-1 icon-nav"> Ingreso </p>
-                                    </a>
-                                </Link>
+                            <div className="d-none d-sm-block icon-link">
+                                <ActiveLinkIcon href="/ingreso" icon="icon-shop" >
+                                    Ingreso
+                                </ActiveLinkIcon>
                             </div>
                         </div>
                         <div className="button-activity d-none d-sm-block col-sm-3 col-lg-2">boton de actividad</div>
@@ -145,12 +135,9 @@ export default class Nav extends React.Component {
                          align-content: center;
                         
                     }
-                    .icon-nav{
-                        color: #fff;
-                        font-size: 10px;
+                    .icon-link{
                         float: right;
-                        margin: 3px;
-                        margin-right:15px;
+                        margin-right:10px;
                     }
 
                 `}</style>
