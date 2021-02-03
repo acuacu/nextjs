@@ -1,5 +1,5 @@
 import HeadBody from '../components/Head'
-import NavBar from '../components/nav'
+import NavBar from '../components/Nav'
 import SimpleSlider from '../components/simpleSlider'
 import Slider from "react-slick";
 import ActiveLink from "../components/button/link"
