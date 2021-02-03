@@ -1,10 +1,8 @@
 // IMPORT FROM NEXT
 import Link from 'next/link'
-import Head from 'next/head'
-import ActiveLink from './button/link'
+
 import ActiveLinkIcon from "./button/iconLink"
 
-import Dropdown from './nav/index'
 
 
 export default class NavBar extends React.Component {
@@ -67,14 +65,13 @@ export default class NavBar extends React.Component {
                             </div>
                         </div>
                         <div className="button-activity d-none d-sm-block col-sm-3 col-lg-2">boton de actividad</div>
-                        <Dropdown />
+                   
                     </div>
                 </div>
 
                 <style jsx >{`
                     .nav{
                         position: fixed;
-                        z-index: 20000;
                         top: 0px;
                         left: 0px;
                         background-color: #2c3449;
