@@ -1,6 +1,6 @@
 import HeadBody from '../components/Head'
 import { useState } from 'react';
-import NavBar from '../components/nav'
+import NavBar from '../components/Nav'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 

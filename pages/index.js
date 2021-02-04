@@ -5,11 +5,12 @@ import Slider from "react-slick";
 import ActiveLink from "../components/button/link"
 import MultipleItem from "../components/simpleMultiple3Elemento"
 import MultipleItems from "../components/simpleMultipleElementos"
-export default class extends React.Component {
-  state = {
-    token: null
-  }
-  render() {
+
+import { useState } from 'react';
+
+
+export default function() {
+    const [isLogged, logout] = useState(true)
     return (
       <div className="body-content container-fluid">
         <HeadBody
@@ -19,7 +20,7 @@ export default class extends React.Component {
           description="El portafolios ganador de un hoscar por simplesa y utilidad"
           keywords="Desarrollo pagina Web, Wordpress, Portafolios de Walter, Nextjs"
         />
-        <NavBar></NavBar>
+        <NavBar User={isLogged} UserLogout={logout}></NavBar>
         {/* 1er slider*/}
 
             <SimpleSlider></SimpleSlider>
@@ -251,6 +252,5 @@ export default class extends React.Component {
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.3/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
       </div>
     )
-  }
 
 }

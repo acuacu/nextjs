@@ -6,7 +6,14 @@ import ActiveLinkIcon from "./button/iconLink"
 
 
 export default class NavBar extends React.Component {
+
     render() {
+        const { User, UserLogout } = this.props
+        const HeadClickLogout = e =>{
+            e.preventDefault()
+            alert("Hoola")
+            UserLogout(false)
+        }
         return (
             <div>
                 <div className="d-fluid nav">
@@ -47,31 +54,42 @@ export default class NavBar extends React.Component {
                             <div className="bucsador">  BUSCAR  </div>
                         </div>
                         <div className="contenedor-botones">
+                        {User
+                                ?
+                                <div className="d-none d-sm-block icon-link">
+                                    <button type="button" className="btn btn-danger" onClick={HeadClickLogout}>Salir</button>
+                                </div> : <></>}
                             <div className="d-none d-sm-block icon-link">
-                            <ActiveLinkIcon href="/soporte" icon="icon-shop" >
+                                <ActiveLinkIcon href="/soporte" icon="icon-shop" >
                                     Soporte
                                 </ActiveLinkIcon>
                             </div>
+                            {!User
+                                ?
+                                <div className="d-none d-sm-block icon-link">
+                                    <ActiveLinkIcon href="/registro" icon="icon-shop" >
+                                        Registro
+                            </ActiveLinkIcon>
+                                </div> : <></>}
+                            {!User
+                                ?
+                                <div className="d-none d-sm-block icon-link">
+                                    <ActiveLinkIcon href="/ingreso" icon="icon-shop" >
+                                        Ingreso
+                                </ActiveLinkIcon>
+                                </div> : <></>}
 
-                            <div className="d-none d-sm-block icon-link">
-                                <ActiveLinkIcon href="/registro" icon="icon-shop" >
-                                    Registro
-                                </ActiveLinkIcon>
-                            </div>
-                            <div className="d-none d-sm-block icon-link">
-                                <ActiveLinkIcon href="/ingreso" icon="icon-shop" >
-                                    Ingreso
-                                </ActiveLinkIcon>
-                            </div>
+
                         </div>
                         <div className="button-activity d-none d-sm-block col-sm-3 col-lg-2">boton de actividad</div>
-                   
+
                     </div>
                 </div>
 
                 <style jsx >{`
                     .nav{
                         position: fixed;
+                        z-index: 20000;
                         top: 0px;
                         left: 0px;
                         background-color: #2c3449;
@@ -138,40 +156,6 @@ export default class NavBar extends React.Component {
                     }
 
                 `}</style>
-                <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <a className="navbar-brand" href="#">Navbar</a>
-        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon" />
-        </button>
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav mr-auto">
-            <li className="nav-item active">
-              <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">Link</a>
-            </li>
-            <li className="nav-item dropdown">
-              <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Dropdown
-              </a>
-              <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a className="dropdown-item" href="#">Action</a>
-                <a className="dropdown-item" href="#">Another action</a>
-                <div className="dropdown-divider" />
-                <a className="dropdown-item" href="#">Something else here</a>
-              </div>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link disabled" href="#">Disabled</a>
-            </li>
-          </ul>
-          <form className="form-inline my-2 my-lg-0">
-            <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
-            <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          </form>
-        </div>
-      </nav>
             </div>
 
         )
