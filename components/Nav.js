@@ -9,13 +9,14 @@ export default class NavBar extends React.Component {
 
     render() {
         const { User, UserLogout } = this.props
-        const HeadClickLogout = e =>{
+        const HeadClickLogout = e => {
             e.preventDefault()
             alert("Hoola")
             UserLogout(false)
         }
         return (
             <div>
+
                 <div className="d-fluid nav">
                     <div className="content">
                         <div className="margen col-12 col-sm-4 col-md-4 col-lg-3">
@@ -50,11 +51,27 @@ export default class NavBar extends React.Component {
                             </Link>
                         </div>
 
-                        <div className="contenedor-buscador d-none d-sm-block col-sm-5 col-md-5 col-lg-3">
-                            <div className="bucsador">  BUSCAR  </div>
+
+
+                        <div className="contenedor-buscador d-none d-md-block col-md-9 col-lg-10">
+
+                            <form className="form-inline  justify-content-center">
+                                <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
+                                <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                            </form>
+
                         </div>
+
+
+
+
+
+
+
+
+
                         <div className="contenedor-botones">
-                        {User
+                            {User
                                 ?
                                 <div className="d-none d-sm-block icon-link">
                                     <button type="button" className="btn btn-danger" onClick={HeadClickLogout}>Salir</button>
@@ -84,9 +101,20 @@ export default class NavBar extends React.Component {
                         <div className="button-activity d-none d-sm-block col-sm-3 col-lg-2">boton de actividad</div>
 
                     </div>
+                    <div className="col-12 s">
+                        asmocaopsmcçasopm´spvmd´pfovms´dvom
+                </div>
                 </div>
 
+
+
                 <style jsx >{`
+                    .s{
+                        background: #352;
+                        height:200px;
+                        width:35px;
+                        z-index: 999;
+                    }
                     .nav{
                         position: fixed;
                         z-index: 20000;
@@ -97,12 +125,10 @@ export default class NavBar extends React.Component {
                         color: rgba(230, 230, 230, .9);
                     }
                     .contenedor-buscador{
-                        height: 50px;
-                        background-color: blueviolet;
-                        float: left;
+                        padding-top: 6px;
+                        margin: 0px;
                     }
                     .contenedor-botones{
-                        width: 60%;
                         position: absolute;
                         right: 0;
                         top: 0;
