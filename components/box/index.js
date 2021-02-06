@@ -1,6 +1,5 @@
-export default function Boxer(){
+export default function Box(){
     return(
-
         <div className="card" style={{width: '18rem'}}>
         <img className="card-img-top" src="..." alt="Card image cap" />
         <div className="card-body">
