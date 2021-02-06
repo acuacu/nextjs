@@ -3,26 +3,17 @@ import { useState } from 'react';
 import NavBar from '../components/Nav'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import Box from "../components/Box"
 
 
+export default function soporte() {
 
-export default function Ingreso() {
-    const router = useRouter()
-    
 
-    const [userName, setUserName] = useState("")
-    const [firstName, setFirstName] = useState("")
-    const [lastName, setLastName] = useState("")
-    const [email, setEmail] = useState("")
-    const [password, setPassword] = useState("")
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        alert(`${userName}, ${firstName}, ${lastName}, ${email}, ${password}`)
-        // ruta actual
-        console.log(router.pathname)
-        // redireccion a el Home
-        router.push("/")
-    }
+    const [soporteOnline, setActivitySoportOnline] = useState(false)
+    const [soporteTikets, setActivitySoportTikets] = useState(false)
+    const [soporteUsurios, setActivitySoportUsuarios] = useState(false)
+
+
 
     return (
         <div className="container">
@@ -41,21 +32,36 @@ export default function Ingreso() {
             <br />
             <br />
             <br />
-            <div className="w-50 mx-auto">
-                <h1> Soportte</h1>
-                <p>Bienvenido, no compartiremos tu información con nadie.</p>
+            <div className="col-12 row justify-content-center">
+                <h1 className="col-12"> Soportte</h1>
+                <p className="col-12">Bienvenido, no compartiremos tu información con nadie.</p>
                 <hr />
-                <h5>csdcsdcsd</h5>
-                <small id="emailHelp" className="form-text text-muted">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum..</small>
-            
-                <h5>csdcsdcsd</h5>
-                <small id="emailHelp" className="form-text text-muted">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum..</small>
-            
-                <h5>csdcsdcsd</h5>
-                <small id="emailHelp" className="form-text text-muted">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum..</small>
+                { !soporteOnline ?  
+
+                <div className="col-12 col-xs-12 col-md-4 mb-3">
+                    <div className="card text-white bg-success" onClick={()=>{soporteOnline?setActivitySoportOnline(false):setActivitySoportOnline(true)}} >
+                        <div className="card-header justify-content-center"> 
+                            <h1 className="icon-megaphone col-12 mx-auto"> </h1>
+                        </div>
+                        <div className="card-body">
+                            <h5 className="card-title">Soporte en línea</h5>
+                            <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>
+                </div>:
+                   <div onClick={()=>{soporteOnline?setActivitySoportOnline(false):setActivitySoportOnline(true)}}> <Box ></Box> </div> }
+                <div className="col-12 col-xs-12 col-md-4 mb-3">
+                    <div className="card text-white bg-primary" onClick={()=>{soporteTikets?setActivitySoportTikets(false):setActivitySoportTikets(true)}}>
+                        <div className="card-header">Crear un ticket a soporte</div>
+                        <div className="card-body">
+                            <h5 className="card-title">Primary card title</h5>
+                            <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
             <hr />
-
         </div>
     )
 }

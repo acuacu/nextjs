@@ -3,16 +3,60 @@ import { useState } from 'react';
 import NavBar from '../components/Nav'
 
 
+import { useCallback, useEffect } from 'react'
+import { useRouter } from 'next/router'
+
+
 
 
 export default function Ingreso() {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        alert(`${email}, ${password}`)
-    }
+
+
+
+
+
+
+
+
+    const router = useRouter()
+    const handleSubmit = useCallback((e) => {
+      e.preventDefault()
+      alert(`${email}, ${password}`)
+      router.push('/registro')
+
+      fetch('127.0.0.1:8000/api-user-login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          /* Form data */
+        }),
+      }).then((res) => {
+        // Do a fast client-side transition to the already prefetched dashboard page
+        if (res.ok) router.push('/registro')
+      })
+    }, [])
+  
+    useEffect(() => {
+      // Prefetch the dashboard page
+      router.prefetch('/registro')
+    }, [])
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     return (
         <div className="container">
