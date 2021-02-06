@@ -3,7 +3,7 @@ import { useState } from 'react';
 import NavBar from '../components/Nav'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import Box from "../components/Box"
+import Boxer from "../components/Box"
 
 
 export default function soporte() {
@@ -49,7 +49,7 @@ export default function soporte() {
                         </div>
                     </div>
                 </div>:
-                   <div onClick={()=>{soporteOnline?setActivitySoportOnline(false):setActivitySoportOnline(true)}}> <Box ></Box> </div> }
+                   <div onClick={()=>{soporteOnline?setActivitySoportOnline(false):setActivitySoportOnline(true)}}> <Boxer ></Boxer> </div> }
                 <div className="col-12 col-xs-12 col-md-4 mb-3">
                     <div className="card text-white bg-primary" onClick={()=>{soporteTikets?setActivitySoportTikets(false):setActivitySoportTikets(true)}}>
                         <div className="card-header">Crear un ticket a soporte</div>

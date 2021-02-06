@@ -1,4 +1,4 @@
-export default function Box(){
+export default function Boxer(){
     return(
 
         <div className="card" style={{width: '18rem'}}>
